@@ -13,7 +13,7 @@ struct ___VARIABLE_sceneName___View: View {
   let store: StoreOf<___VARIABLE_sceneName___>
 
   var body: some View {
-    WithViewStore(store) { viewStore in
+    WithViewStore(self.store, observe: { $0 }) { viewStore in
       VStack(spacing: 10) {
 
       }
@@ -27,10 +27,9 @@ struct ___VARIABLE_sceneName___View: View {
 struct ___VARIABLE_sceneName___View_Previews: PreviewProvider {
   static var previews: some View {
     ___VARIABLE_sceneName___View(
-      store: .init(
-        initialState: .initialState,
-        reducer: ___VARIABLE_sceneName___()
-      )
+      store: Store(initialState: ___VARIABLE_sceneName___.State()) {
+        ___VARIABLE_sceneName___()
+      }
     )
   }
 }

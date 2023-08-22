@@ -8,7 +8,7 @@
 
 import ComposableArchitecture
 
-struct ___VARIABLE_sceneName___: ReducerProtocol {
+struct ___VARIABLE_sceneName___: Reducer {
   struct State: Equatable {
     static let initialState: State = .init()
   }
@@ -17,12 +17,10 @@ struct ___VARIABLE_sceneName___: ReducerProtocol {
     case onAppear
   }
 
-  var body: some ReducerProtocolOf<___VARIABLE_sceneName___> {
-    Reduce { state, action in
-      switch action {
-      case .onAppear:
-        return .none
-      }
+  func reduce(into state: inout State, action: Action) -> Effect<Action> {
+    switch action {
+    case .onAppear:
+      return .none
     }
   }
 }
