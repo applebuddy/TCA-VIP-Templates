@@ -64,6 +64,9 @@
 	<key>Platforms</key>
 	<array>
 		<string>com.apple.platform.iphoneos</string>
+		<string>com.apple.platform.macosx</string>
+		<string>com.apple.platform.watchos</string>
+		<string>com.apple.platform.appletvos</string>
 	</array>
 	<key>SortOrder</key>
 	<string>2</string>
