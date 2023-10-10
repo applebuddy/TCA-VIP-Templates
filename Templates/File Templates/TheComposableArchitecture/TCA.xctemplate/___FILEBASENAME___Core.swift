@@ -23,4 +23,13 @@ struct ___VARIABLE_sceneName___: Reducer {
       return .none
     }
   }
+
+  var body: some ReducerOf<___VARIABLE_sceneName___> {
+    Reduce { state, action in
+      switch action {
+      case .onAppear:
+        return .none
+      }
+    }
+  }
 }
