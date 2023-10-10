@@ -13,14 +13,18 @@ struct ___VARIABLE_sceneName___View: View {
   let store: StoreOf<___VARIABLE_sceneName___>
 
   var body: some View {
-    WithViewStore(self.store, observe: { $0 }) { viewStore in
-      VStack(spacing: 10) {
+    WithViewStore(
+      store,
+      observe: { $0 },
+      content: { viewStore in
+        VStack(spacing: 0) {
 
+        }
+        .onAppear {
+          viewStore.send(.onAppear)
+        }
       }
-      .onAppear {
-        viewStore.send(.onAppear)
-      }
-    }
+    )
   }
 }
 
