@@ -22,12 +22,12 @@ protocol ___VARIABLE_sceneName___DataStore {
 }
 
 final class ___VARIABLE_sceneName___Interactor {
-    private let worker: ___VARIABLE_sceneName___WorkingLogic
-    private let presenter: ___VARIABLE_sceneName___PresentationLogic
+    private let worker: any ___VARIABLE_sceneName___WorkingLogic
+    private let presenter: any ___VARIABLE_sceneName___PresentationLogic
 
     init(
-        worker: ___VARIABLE_sceneName___WorkingLogic,
-        presenter: ___VARIABLE_sceneName___PresentationLogic
+        worker: any ___VARIABLE_sceneName___WorkingLogic,
+        presenter: any ___VARIABLE_sceneName___PresentationLogic
     ) {
         self.worker = worker
         self.presenter = presenter

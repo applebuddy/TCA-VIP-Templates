@@ -17,14 +17,14 @@ protocol ___VARIABLE_sceneName___DisplayLogic: AnyObject {
 }
 
 final class ___VARIABLE_sceneName___ViewController: UIViewController {
-    private let interactor: ___VARIABLE_sceneName___BusinessLogic
-    private let router: ___VARIABLE_sceneName___RoutingLogic
-    private let logger: ___VARIABLE_sceneName___Logger
+    private let interactor: any ___VARIABLE_sceneName___BusinessLogic
+    private let router: any ___VARIABLE_sceneName___RoutingLogic
+    private let logger: any ___VARIABLE_sceneName___LoggingLogic
 
     init(
-        interactor: ___VARIABLE_sceneName___BusinessLogic,
-        router: ___VARIABLE_sceneName___RoutingLogic,
-        logger: ___VARIABLE_sceneName___Logger
+        interactor: any ___VARIABLE_sceneName___BusinessLogic,
+        router: any ___VARIABLE_sceneName___RoutingLogic,
+        logger: any ___VARIABLE_sceneName___LoggingLogic
     ) {
         self.interactor = interactor
         self.router = router

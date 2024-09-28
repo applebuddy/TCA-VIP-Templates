@@ -17,7 +17,7 @@ protocol ___VARIABLE_sceneName___PresentationLogic {
 }
 
 final class ___VARIABLE_sceneName___Presenter {
-    weak var displayLogic: ___VARIABLE_sceneName___DisplayLogic?
+    weak var displayLogic: (any ___VARIABLE_sceneName___DisplayLogic)?
 }
 
 extension ___VARIABLE_sceneName___Presenter: ___VARIABLE_sceneName___PresentationLogic {

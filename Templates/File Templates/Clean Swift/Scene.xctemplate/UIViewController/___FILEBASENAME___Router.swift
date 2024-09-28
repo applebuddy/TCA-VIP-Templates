@@ -18,9 +18,9 @@ protocol ___VARIABLE_sceneName___RoutingLogic {
 
 final class ___VARIABLE_sceneName___Router {
     weak var viewController: ___VARIABLE_sceneName___ViewController?
-    private let dataStore: ___VARIABLE_sceneName___DataStore
+    private let dataStore: any ___VARIABLE_sceneName___DataStore
 
-    init(dataStore: ___VARIABLE_sceneName___DataStore) {
+    init(dataStore: any ___VARIABLE_sceneName___DataStore) {
         self.dataStore = dataStore
     }
 }
