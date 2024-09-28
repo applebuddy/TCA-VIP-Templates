@@ -10,14 +10,13 @@
 //  see http://clean-swift.com
 //
 
-import UIKit
+import Foundation
 
-protocol ___VARIABLE_sceneName___RoutingLogic {
-    func routeToSomewhere()
+protocol ___VARIABLE_sceneName___LoggingLogic {
+    func logSomething()
 }
 
-final class ___VARIABLE_sceneName___Router {
-    weak var viewController: ___VARIABLE_sceneName___ViewController?
+final class ___VARIABLE_sceneName___Logger {
     private let dataStore: any ___VARIABLE_sceneName___DataStore
 
     init(dataStore: any ___VARIABLE_sceneName___DataStore) {
@@ -25,8 +24,8 @@ final class ___VARIABLE_sceneName___Router {
     }
 }
 
-extension ___VARIABLE_sceneName___Router: ___VARIABLE_sceneName___RoutingLogic {
-    func routeToSomewhere() {
+extension ___VARIABLE_sceneName___Logger: ___VARIABLE_sceneName___LoggingLogic {
+    func logSomething() {
         // uses dataStore if needed when routing
     }
 }

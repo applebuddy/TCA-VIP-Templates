@@ -10,19 +10,22 @@
 //  see http://clean-swift.com
 //
 
-import UIKit
+import Foundation
 
 enum ___VARIABLE_sceneName___ {
     // MARK: Use cases
   
     enum Something {
         struct Request {
+            // The model that ViewController passes to Interactor.
         }
 
         struct Response {
+            // The model that Interactor passes to Presenter.
         }
 
         struct ViewModel {
+            // The model that ViewModel passes to ViewController(conforming DisplayLogic).
         }
     }
 }
