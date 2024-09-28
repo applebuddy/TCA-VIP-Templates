@@ -25,7 +25,7 @@ enum ___VARIABLE_sceneName___ {
         }
 
         struct ViewModel {
-            // The model that ViewModel passes to ViewController(confirming DisplayLogic).
+            // The model that ViewModel passes to ViewController(conforming DisplayLogic).
         }
     }
 }
