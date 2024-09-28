@@ -10,27 +10,35 @@
 //  see http://clean-swift.com
 //
 
-import UIKit
+import Foundation
 
 protocol ___VARIABLE_sceneName___BusinessLogic {
     func doSomething(request: ___VARIABLE_sceneName___.Something.Request)
 }
 
+/// sharing logics with Router or Logger
 protocol ___VARIABLE_sceneName___DataStore {
-    // var name: String { get set }
+
 }
 
-class ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___BusinessLogic, ___VARIABLE_sceneName___DataStore {
-    var presenter: ___VARIABLE_sceneName___PresentationLogic?
-    var worker: ___VARIABLE_sceneName___Worker?
-    // var name: String = ""
-  
-    // MARK: Do something
-  
+final class ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___BusinessLogic {
+    private let presenter: ___VARIABLE_sceneName___PresentationLogic
+    private let worker: ___VARIABLE_sceneName___WorkingLogic
+
+    init(
+        presenter: ___VARIABLE_sceneName___PresentationLogic,
+        worker: ___VARIABLE_sceneName___WorkingLogic
+    ) {
+        self.presenter = presenter
+        self.worker = worker
+    }
+}
+
+extension ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___DataStore {
     func doSomething(request: ___VARIABLE_sceneName___.Something.Request) {
-        worker = ___VARIABLE_sceneName___Worker()
+        worker = ___VARIABLE_sceneName___WorkingLogic()
         worker?.doSomeWork()
-    
+
         let response = ___VARIABLE_sceneName___.Something.Response()
         presenter?.presentSomething(response: response)
     }

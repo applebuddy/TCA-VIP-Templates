@@ -10,9 +10,18 @@
 //  see http://clean-swift.com
 //
 
-import UIKit
+import Foundation
 
-class ___VARIABLE_sceneName___Worker {
+protocol ___VARIABLE_sceneName___WorkingLogic {
+    func doSomeWork()
+}
+
+final class ___VARIABLE_sceneName___Worker {
+
+}
+
+extension ___VARIABLE_sceneName___Worker: ___VARIABLE_sceneName___WorkingLogic {
     func doSomeWork() {
+
     }
 }

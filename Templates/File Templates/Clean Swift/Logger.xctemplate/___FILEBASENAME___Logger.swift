@@ -12,16 +12,16 @@
 
 import Foundation
 
-protocol ___VARIABLE_sceneName___WorkingLogic {
-
+protocol ___VARIABLE_sceneName___LoggingLogic {
+    func logSomething()
 }
 
-final class ___VARIABLE_sceneName___Worker {
-
+final class ___VARIABLE_sceneName___Logger {
+    private let dataStore: ___VARIABLE_sceneName___DataStore
 }
 
-extension ___VARIABLE_sceneName___Worker: ___VARIABLE_sceneName___WorkingLogic {
-    func doSomeWork() {
-
+extension ___VARIABLE_sceneName___Router: ___VARIABLE_sceneName___LoggingLogic {
+    func logSomething() {
+        // uses dataStore if needed when routing
     }
 }
