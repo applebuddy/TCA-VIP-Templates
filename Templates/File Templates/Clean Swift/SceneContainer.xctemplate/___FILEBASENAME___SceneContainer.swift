@@ -12,11 +12,16 @@
 
 import UIKit
 
-final class ___VARIABLE_sceneName___DIContainer {
+final class ___VARIABLE_sceneName___SceneContainer {
     func viewController() -> UIViewController {
         let presenter = ___VARIABLE_sceneName___Presenter()
 
-        let interactor = ___VARIABLE_sceneName___Interactor(presenter: presenter)
+        let worker = ___VARIABLE_sceneName___Worker()
+
+        let interactor = ___VARIABLE_sceneName___Interactor(
+            worker: worker,
+            presenter: presenter
+        )
 
         let router = ___VARIABLE_sceneName___Router(dataStore: interactor)
 
@@ -30,5 +35,7 @@ final class ___VARIABLE_sceneName___DIContainer {
 
         presenter.displayLogic = viewController
         router.viewController = viewController
+
+        return viewController
     }
 }

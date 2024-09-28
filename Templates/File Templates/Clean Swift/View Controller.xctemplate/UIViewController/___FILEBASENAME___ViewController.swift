@@ -12,40 +12,19 @@
 
 import UIKit
 
-final class ___VARIABLE_sceneName___DIContainer {
-    func viewController() -> UIViewController {
-        let presenter = ___VARIABLE_sceneName___Presenter()
-
-        let interactor = ___VARIABLE_sceneName___Interactor(presenter: presenter)
-
-        let router = ___VARIABLE_sceneName___Router(dataStore: interactor)
-
-        let logger = ___VARIABLE_sceneName___Logger(dataStore: interactor)
-
-        let viewController = ___VARIABLE_sceneName___ViewController(
-            interactor: interactor,
-            router: router,
-            logger: logger
-        )
-
-        presenter.displayLogic = viewController
-        router.viewController = viewController
-    }
-}
-
-protocol ___VARIABLE_sceneName___DisplayLogic {
+protocol ___VARIABLE_sceneName___DisplayLogic: AnyObject {
     func displaySomething(viewModel: ___VARIABLE_sceneName___.Something.ViewModel)
 }
 
 final class ___VARIABLE_sceneName___ViewController: UIViewController {
-    private let interactor: ___VARIABLE_sceneName___BusinessLogic
-    private let router: ___VARIABLE_sceneName___RoutingLogic
-    private let logger: ___VARIABLE_sceneName___Logger
+    private let interactor: any ___VARIABLE_sceneName___BusinessLogic
+    private let router: any ___VARIABLE_sceneName___RoutingLogic
+    private let logger: any ___VARIABLE_sceneName___LoggingLogic
 
-    override init(
-        interactor: ___VARIABLE_sceneName___BusinessLogic,
-        router: ___VARIABLE_sceneName___RoutingLogic,
-        logger: ___VARIABLE_sceneName___Logger
+    init(
+        interactor: any ___VARIABLE_sceneName___BusinessLogic,
+        router: any ___VARIABLE_sceneName___RoutingLogic,
+        logger: any ___VARIABLE_sceneName___LoggingLogic
     ) {
         self.interactor = interactor
         self.router = router
@@ -65,7 +44,7 @@ final class ___VARIABLE_sceneName___ViewController: UIViewController {
 
     func doSomething() {
         let request = ___VARIABLE_sceneName___.Something.Request()
-        interactor?.doSomething(request: request)
+        interactor.doSomething(request: request)
     }
 }
 

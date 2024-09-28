@@ -17,10 +17,14 @@ protocol ___VARIABLE_sceneName___LoggingLogic {
 }
 
 final class ___VARIABLE_sceneName___Logger {
-    private let dataStore: ___VARIABLE_sceneName___DataStore
+    private let dataStore: any ___VARIABLE_sceneName___DataStore
+
+    init(dataStore: any ___VARIABLE_sceneName___DataStore) {
+        self.dataStore = dataStore
+    }
 }
 
-extension ___VARIABLE_sceneName___Router: ___VARIABLE_sceneName___LoggingLogic {
+extension ___VARIABLE_sceneName___Logger: ___VARIABLE_sceneName___LoggingLogic {
     func logSomething() {
         // uses dataStore if needed when routing
     }

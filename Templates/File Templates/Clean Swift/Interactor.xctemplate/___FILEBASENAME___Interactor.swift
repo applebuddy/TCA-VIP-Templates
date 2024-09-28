@@ -21,25 +21,28 @@ protocol ___VARIABLE_sceneName___DataStore {
 
 }
 
-final class ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___BusinessLogic {
-    private let presenter: ___VARIABLE_sceneName___PresentationLogic
-    private let worker: ___VARIABLE_sceneName___WorkingLogic
+final class ___VARIABLE_sceneName___Interactor {
+    private let worker: any ___VARIABLE_sceneName___WorkingLogic
+    private let presenter: any ___VARIABLE_sceneName___PresentationLogic
 
     init(
-        presenter: ___VARIABLE_sceneName___PresentationLogic,
-        worker: ___VARIABLE_sceneName___WorkingLogic
+        worker: any ___VARIABLE_sceneName___WorkingLogic,
+        presenter: any ___VARIABLE_sceneName___PresentationLogic
     ) {
-        self.presenter = presenter
         self.worker = worker
+        self.presenter = presenter
     }
 }
 
 extension ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___DataStore {
+
+}
+
+extension ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___BusinessLogic {
     func doSomething(request: ___VARIABLE_sceneName___.Something.Request) {
-        worker = ___VARIABLE_sceneName___WorkingLogic()
-        worker?.doSomeWork()
+        worker.doSomeWork()
 
         let response = ___VARIABLE_sceneName___.Something.Response()
-        presenter?.presentSomething(response: response)
+        presenter.presentSomething(response: response)
     }
 }

@@ -13,7 +13,7 @@
 import Foundation
 
 protocol ___VARIABLE_sceneName___WorkingLogic {
-
+    func doSomeWork()
 }
 
 final class ___VARIABLE_sceneName___Worker {

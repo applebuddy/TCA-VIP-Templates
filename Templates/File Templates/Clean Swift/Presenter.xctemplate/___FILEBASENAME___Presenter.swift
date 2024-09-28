@@ -17,12 +17,12 @@ protocol ___VARIABLE_sceneName___PresentationLogic {
 }
 
 final class ___VARIABLE_sceneName___Presenter {
-    weak var displayLogic: ___VARIABLE_sceneName___DisplayLogic?
+    weak var displayLogic: (any ___VARIABLE_sceneName___DisplayLogic)?
 }
 
 extension ___VARIABLE_sceneName___Presenter: ___VARIABLE_sceneName___PresentationLogic {
     func presentSomething(response: ___VARIABLE_sceneName___.Something.Response) {
         let viewModel = ___VARIABLE_sceneName___.Something.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
+        displayLogic?.displaySomething(viewModel: viewModel)
     }
 }
